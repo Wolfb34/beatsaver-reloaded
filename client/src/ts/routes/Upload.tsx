@@ -230,6 +230,16 @@ const Upload: FunctionComponent<IProps> = ({ user, push, replace }) => {
       </h1>
       <br />
 
+      <h2 className='has-text-centered is-size-3 has-text-weight-light'>
+        Please do not upload Work-In-Progress maps! You do not need to upload to
+        BeatSaver to playtest. Please see
+        <a href='https://bsmg.wiki/mapping/#playtesting'>
+          the wiki page on playtesting
+        </a>
+        for more information.
+      </h2>
+      <br />
+
       <Input
         label='Beatmap Title'
         value={title}
