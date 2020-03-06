@@ -10,6 +10,7 @@ import ms from 'ms'
 import React, { FunctionComponent, useRef, useState } from 'react'
 import { connect, MapStateToProps } from 'react-redux'
 import stringReplace from 'react-string-replace'
+import { ExtLink } from '../components/ExtLink'
 import { FileInput } from '../components/FileInput'
 import { Input, TextareaInput } from '../components/Input'
 import { IState } from '../store'
@@ -228,15 +229,15 @@ const Upload: FunctionComponent<IProps> = ({ user, push, replace }) => {
       <h1 className='has-text-centered is-size-3 has-text-weight-light'>
         Upload Beatmap
       </h1>
-      <br />
-
-      <h2 className='has-text-centered is-size-3 has-text-weight-light'>
-        Please do not upload Work-In-Progress maps! You do not need to upload to
-        BeatSaver to playtest. Please see
-        <a href='https://bsmg.wiki/mapping/#playtesting'>
-          the wiki page on playtesting
-        </a>
-        for more information.
+      <h2 className='has-text-centered has-text-weight-light'>
+        <b>
+          Please do not upload Work-In-Progress maps! You do not need to upload
+          to BeatSaver to playtest. Please see{' '}
+          <ExtLink href='https://bsmg.wiki/mapping/#playtesting'>
+            the wiki page on playtesting
+          </ExtLink>{' '}
+          for more information.
+        </b>
       </h2>
       <br />
 
