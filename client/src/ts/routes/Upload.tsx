@@ -232,7 +232,7 @@ const Upload: FunctionComponent<IProps> = ({ user, push, replace }) => {
       <h2 className='has-text-centered has-text-weight-light'>
         <b>
           Please do not upload Work-In-Progress maps! You do not need to upload
-          to BeatSaver to playtest. Please see{' '}
+          to BeatSaver to playtest. See{' '}
           <ExtLink href='https://bsmg.wiki/mapping/#playtesting'>
             the wiki page on playtesting
           </ExtLink>{' '}
