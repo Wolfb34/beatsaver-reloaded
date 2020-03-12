@@ -10,6 +10,7 @@ import ms from 'ms'
 import React, { FunctionComponent, useRef, useState } from 'react'
 import { connect, MapStateToProps } from 'react-redux'
 import stringReplace from 'react-string-replace'
+import { ExtLink } from '../components/ExtLink'
 import { FileInput } from '../components/FileInput'
 import { Input, TextareaInput } from '../components/Input'
 import { IState } from '../store'
@@ -47,6 +48,17 @@ const Upload: FunctionComponent<IProps> = ({ user, push, replace }) => {
       </div>
     )
   }
+
+  const wipNotif = true
+  const playtestWiki = 'https://bsmg.wiki/mapping/#playtesting'
+  const wipWarning = (
+    <h2 className='has-text-centered has-text-weight-light'>
+      Please do not upload Work-In-Progress maps! You do not need to upload to
+      BeatSaver to playtest. See{' '}
+      <ExtLink href={playtestWiki}> the wiki page on playtesting</ExtLink> for
+      more information.
+    </h2>
+  )
 
   const [loading, setLoading] = useState(false)
 
@@ -228,6 +240,7 @@ const Upload: FunctionComponent<IProps> = ({ user, push, replace }) => {
       <h1 className='has-text-centered is-size-3 has-text-weight-light'>
         Upload Beatmap
       </h1>
+      {wipNotif ? wipWarning : ''}
       <br />
 
       <Input
@@ -281,7 +294,7 @@ const Upload: FunctionComponent<IProps> = ({ user, push, replace }) => {
         disabled={loading}
         onClick={() => submit()}
       >
-        Upload
+        Upload {wipNotif ? 'finished map' : ''}
       </button>
     </div>
   )
